@@ -62,12 +62,13 @@ export function ToolbarItems(props: IToolbarProps) {
   }, [fullscreen, originalOverflow, overflow]);
 
   return (
-    <ul>
+    <div>
       {(props.commands || []).map((item, idx) => {
-        if (item.keyCommand === 'divider') {
-          return <li key={idx} {...item.liProps} className={`${prefixCls}-toolbar-divider`} />;
-        }
+        if (item.keyCommand === 'divider')
+          return <div key={idx} {...item.divProps} className={`${prefixCls}-toolbar-divider`} />;
+
         if (!item.keyCommand) return <Fragment key={idx} />;
+
         const activeBtn =
           (fullscreen && item.keyCommand === 'fullscreen') || (item.keyCommand === 'preview' && preview === item.value);
         const childNode =
@@ -86,7 +87,7 @@ export function ToolbarItems(props: IToolbarProps) {
           render && typeof render === 'function' ? render(item, !!disabled, handleClick, idx) : null
         ) as React.ReactElement;
         return (
-          <li key={idx} {...item.liProps} className={activeBtn ? `active` : ''}>
+          <div key={idx} {...item.divProps} className={activeBtn ? `active` : ''}>
             {com && React.isValidElement(com) && com}
             {!com && !item.buttonProps && item.icon}
             {!com &&
@@ -115,10 +116,10 @@ export function ToolbarItems(props: IToolbarProps) {
                 commands={Array.isArray(item.children) ? item.children : undefined}
               />
             )}
-          </li>
+          </div>
         );
       })}
-    </ul>
+    </div>
   );
 }
 

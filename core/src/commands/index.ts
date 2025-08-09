@@ -55,7 +55,7 @@ export interface ICommandBase<T> {
   prefix?: string;
   suffix?: string;
   position?: 'right';
-  liProps?: React.LiHTMLAttributes<HTMLLIElement>;
+  divProps?: React.LiHTMLAttributes<HTMLDivElement>;
   buttonProps?: React.ButtonHTMLAttributes<HTMLButtonElement> | null;
   render?: (
     command: ICommand<T>,

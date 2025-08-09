@@ -11,7 +11,6 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@kkt/less-modules": "^7.4.9",
     "@kkt/raw-modules": "^7.4.9",
     "@kkt/scope-plugin-options": "^7.4.9",
     "@types/katex": "^0.16.0",
