@@ -1,7 +1,6 @@
 import MDEditor from './Editor.nohighlight';
 import * as commands from './commands/';
 import * as MarkdownUtil from './utils/markdownUtils';
-import './index.less';
 
 export * from './commands/';
 export * from './commands/group';

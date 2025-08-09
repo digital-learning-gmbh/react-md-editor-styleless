@@ -1,6 +1,7 @@
 import React from 'react';
 import { ICommand, ExecuteState, TextAreaTextApi } from './';
 import { selectWord, executeCommand } from '../utils/markdownUtils';
+import { TableIcon } from 'lucide-react';
 
 export const table: ICommand = {
   name: 'table',
@@ -8,15 +9,7 @@ export const table: ICommand = {
   prefix: '\n| Header | Header |\n|--------|--------|\n| Cell | Cell |\n| Cell | Cell |\n| Cell | Cell |\n\n',
   suffix: '',
   buttonProps: { 'aria-label': 'Add table', title: 'Add table' },
-  icon: (
-    <svg role="img" width="12" height="12" viewBox="0 0 512 512">
-      <path
-        fill="currentColor"
-        d="M64 256V160H224v96H64zm0 64H224v96H64V320zm224 96V320H448v96H288zM448 256H288V160H448v96zM64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64z"
-        //Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com
-      />
-    </svg>
-  ),
+  icon: <TableIcon />,
   execute: (state: ExecuteState, api: TextAreaTextApi) => {
     const newSelectionRange = selectWord({
       text: state.text,

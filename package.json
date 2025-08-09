@@ -78,5 +78,8 @@
     "uiw",
     "uiwjs",
     "code"
-  ]
+  ],
+  "dependencies": {
+    "lucide-react": "^0.539.0"
+  }
 }

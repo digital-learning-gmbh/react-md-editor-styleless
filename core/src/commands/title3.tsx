@@ -1,6 +1,7 @@
 import React from 'react';
 import { headingExecute } from '../commands/title';
 import { ICommand, ExecuteState, TextAreaTextApi } from './';
+import { Heading3Icon } from 'lucide-react';
 
 export const heading3: ICommand = {
   name: 'heading3',
@@ -9,7 +10,7 @@ export const heading3: ICommand = {
   prefix: '### ',
   suffix: '',
   buttonProps: { 'aria-label': 'Insert Heading 3 (ctrl + 3)', title: 'Insert Heading 3 (ctrl + 3)' },
-  icon: <div style={{ fontSize: 15, textAlign: 'left' }}>Heading 3</div>,
+  icon: <Heading3Icon />,
   execute: (state: ExecuteState, api: TextAreaTextApi) => {
     headingExecute({ state, api, prefix: state.command.prefix!, suffix: state.command.suffix });
   },
